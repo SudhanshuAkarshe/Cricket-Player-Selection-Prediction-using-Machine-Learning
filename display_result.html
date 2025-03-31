@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+<main>
+    {% block content %}
+        
+       {% if Tos_bat %}
+            <center><h2 style="font-family:'Times New Roman', Times, serif; color: black;">Batting Selection Table</h2></center>
+            <table style="border: 2px solid rgba(217, 220, 221, 0.89); width: 75%; margin: 0 auto;">
+                <tr style="border: 2px solid rgb(237, 235, 243);">
+                    <th style="background-color: green;"><h2 style="font-family:'Times New Roman', Times, serif; color: black;">Position</h2></th>
+                    <th style="background-color: green;"><h2 style="font-family: 'Times New Roman', Times, serif; color: black;">Player Data</h2></th>
+                </tr>
+                
+                {% for index ,rank in sel_result %}
+                <tr style="border: 2px solid rgb(8, 8, 8);">
+                    
+                    <td style="border: 2px solid rgb(15, 15, 15); background-color: rgba(250, 241, 248, 0.888); text-align: center; padding: 10px;">{{select_player_name.pop|default:''}}</td>
+                    <td style="border: 2px solid rgb(11, 11, 11); background-color: rgba(250, 241, 248, 0.888); text-align: center; padding: 10px;">{{ bating_playerdata_list.pop|default:'' }}</td>
+                  
+                </tr>
+                {% endfor %}
+               
+            
+            </table>
+            <hr>
+            <table style="border: 2px solid rgba(217, 220, 221, 0.89); width: 75%; margin: 0 auto;">
+                <tr style="border: 2px solid rgb(237, 235, 243);">
+                    <th style="background-color: rgb(128, 0, 0);"><h2 style="font-family:'Times New Roman', Times, serif; color: black;">Deselected Players</h2></th>
+                    <th style="background-color: rgb(128, 0, 0);"><h2 style="font-family: 'Times New Roman', Times, serif; color: black;">Player Data</h2></th>
+                </tr>
+            {% for player in desel_result %}
+                <tr style="border: 2px solid rgb(8, 8, 8);">
+                    <td style="border: 2px solid rgb(15, 15, 15); background-color: rgba(250, 241, 248, 0.888); text-align: center; padding: 10px;">{{deselect_player_name.pop|default:''}}</td>
+                    <td style="border: 2px solid rgb(11, 11, 11); background-color: rgba(250, 241, 248, 0.888); text-align: center; padding: 10px;">{{ bating_playernodata_list.pop|default:'' }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+          
+        {% elif Tos_bow %}
+            
+            <center><h2 style="font-family:'Times New Roman', Times, serif; color: black;">Bowling Selection Table</h2></center>
+            <table style="border: 2px solid rgba(217, 220, 221, 0.89); width: 75%; margin: 0 auto;">
+                <tr style="border: 2px solid rgb(237, 235, 243);">
+                    <th style="background-color: green;"><h2 style="font-family:'Times New Roman', Times, serif; color: black;">Position</h2></th>
+                    <th style="background-color: green;"><h2 style="font-family: 'Times New Roman', Times, serif; color: black;">Player Data</h2></th>
+                </tr>
+                {% for player in sel_result %}
+                <tr style="border: 2px solid rgb(8, 8, 8);">
+                    <td style="border: 2px solid rgb(15, 15, 15); background-color: rgba(250, 241, 248, 0.888); text-align: center; padding: 10px;">{{select_player_name.pop|default:''}}</td>
+                    <td style="border: 2px solid rgb(11, 11, 11); background-color: rgba(250, 241, 248, 0.888); text-align: center; padding: 10px;">{{ bowling_playerdata_list.pop|default:'' }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <hr>
+            <table style="border: 2px solid rgba(217, 220, 221, 0.89); width: 75%; margin: 0 auto;">
+                <tr style="border: 2px solid rgb(237, 235, 243);">
+                    <th style="background-color: rgb(128, 0, 0);"><h2 style="font-family:'Times New Roman', Times, serif; color: black;">Deselected Players</h2></th>
+                    <th style="background-color: rgb(128, 0, 0);"><h2 style="font-family: 'Times New Roman', Times, serif; color: black;">Player Data</h2></th>
+                </tr>
+                {% for player in desel_result %}
+                <tr style="border: 2px solid rgb(8, 8, 8);">
+                    <td style="border: 2px solid rgb(15, 15, 15); background-color: rgba(250, 241, 248, 0.888); text-align: center; padding: 10px;">{{deselect_player_name.pop|default:''}}</td>
+                    <td style="border: 2px solid rgb(11, 11, 11); background-color: rgba(250, 241, 248, 0.888); text-align: center; padding: 10px;">{{ bowling_playernodata_list.pop|default:'' }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        {% endif %}
+        
+    {% endblock %} 
+</main>     
+
+

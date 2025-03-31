@@ -1,0 +1,65 @@
+
+
+{% extends "base.html" %}
+<main>
+    {% block content %}
+
+    {% load static %}
+    
+    <center><img src="{% static 'images/logoimg.png' %}" alt="#" /></center>
+    <table style="border: 2px solid rgb(0,0,0); width: 75%; margin: 0 auto;">
+        <tr style="border: 2px solid rgb(0,0,0);">
+            <th style="text-align:center;background-color:gray"><span style="color: #fc0606;"> For Bowling</span> </th>
+        </tr>
+        
+        <tr>
+           
+            
+            <td style="background-color:gray; text-align: center; padding: 10px;"><body style="font-family: Arial, sans-serif; background-color: #f2f2f2;">
+
+               <div style="max-width: 400px; margin: 0 auto; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); text-align: center;">
+           
+                    
+                    <form style="text-align: left;" action="" method='POST'>
+                        {% csrf_token %}
+                        <label for="bow_Tos" style="display: block; margin-top: 10px;"><span style="color:#fc0606">{{bow_msg}}</span></label>
+                        <input type="hidden" id="bow_Tos" name="bow_Tos" value="Bow" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        
+                        <label for="Player1" style="display: block; margin-top: 10px;">Player 1:</label>
+                        <input type="text" id="Player1" name="Player1_name" placeholder="Player Name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>  
+                        <input type="text" id="Player1" name="Player1" placeholder="Wickets, Average, Economy" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                           
+                            <label for="Player2" style="display: block; margin-top: 10px;">Player 2:</label>
+                            <input type="text" id="Player2" name="Player2_name" placeholder="Player Name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                            <input type="text" id="Player2" name="Player2" placeholder="Wickets, Average, Economy" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                            
+                            <label for="Player3" style="display: block; margin-top: 10px;">Player 3:</label>
+                            <input type="text" id="Player3" name="Player3_name" placeholder="Player Name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                            <input type="text" id="Player3" name="Player3" placeholder="Wickets, Average, Economy" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                    
+                            <label for="Player4" style="display: block; margin-top: 10px;">Player 4:</label>
+                            <input type="text" id="Player4" name="Player4_name" placeholder="Player Name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                            <input type="text" id="Player4" name="Player4" placeholder="Wickets, Average, Economy" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                            
+                            <label for="Player5" style="display: block; margin-top: 10px;">Player 5:</label>
+                            <input type="text" id="Player5" name="Player5_name" placeholder="Player Name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                            <input type="text" id="Player5" name="Player5" placeholder="Wickets, Average, Economy" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                    
+                            <label for="Player6" style="display: block; margin-top: 10px;">Player 6:</label>
+                            <input type="text" id="Player6" name="Player6_name" placeholder="Player Name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                            <input type="text" id="Player6" name="Player6" placeholder="Wickets, Average, Economy" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                <center>
+                        <button type="submit" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; margin-top: 20px; cursor: pointer;">Predict Player</button>
+                </center>
+                    </form>
+                </div>
+                
+                </body>
+
+            </td>
+            
+        </tr>
+    </table>
+    {% endblock %}
+</main>
+<div></div>
